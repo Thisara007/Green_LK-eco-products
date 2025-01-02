@@ -30,7 +30,7 @@
 			</nav>
 			<div class="icons">
 				<a href="cart.php"><i class="bi bi-cart"></i></a>
-				<a href="#"><i class="bi bi-person"></i></a>
+				<a href="profile.php"><i class="bi bi-person"></i></a>
 			</div>
 
 

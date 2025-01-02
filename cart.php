@@ -1,5 +1,6 @@
 <?php
 require_once "header.php";
+
 ?>
 <section class="cart" id="cart">
   <div class="section_heding" id="section_heding">
