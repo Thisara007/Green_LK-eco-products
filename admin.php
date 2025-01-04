@@ -134,7 +134,7 @@
                                 echo "<tr>";
                                 echo "<td>". $i."</td>";
                                 echo "<td>". $item["product_id"]."</td>";
-                                echo "<td><img src ='includes/upload_img/". $item["product_img"]."' width = '100' height='100'></td>";
+                                echo "<td><img src ='upload_img/". $item["product_img"]."' width = '100' height='100'></td>";
                                 echo "<td>".$item["product_name"]."</td>";
                                 echo "<td>". $item["product_dis"]."</td>";
                                 echo "<td>". $item["product_price"]."</td>";

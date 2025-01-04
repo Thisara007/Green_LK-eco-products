@@ -20,32 +20,35 @@ require_once "header.php";
 	<h3>Our Products</h3>
 </div>
 <div class="items" id="items">
+<?php 
+	require_once "dbconfi.php";
+	$sql = "SELECT * FROM products;";
+	$result = mysqli_query($connect,$sql);
+
+	if($row = mysqli_num_rows($result)>0){
+		foreach($result as $item){
+?>
 	 <div class="P_container" id="P_container">
     <div class="image-containeer" id="image-containeer">
-        <img src="671127ab93ec2.jpeg" alt="Product Image">
+        <img src="upload_img/<?php echo $item["product_img"] ?>" alt="Product Image">
     </div>
     <div class="P_container_bottom">
         <div class="p_price">
-            Rs 500/=
-			<span class="discount">20% off</span>
+			<?php echo $item["product_price"] ?>
+			<span class="discount"><?php echo $item["product_dis"] ?>% off</span>
         </div>
         <div class="p_buttons">
             <div><a href="#" class="btn btn-buy">Buy Now</a></div>
             <div><a href="#" class="btn btn-cart">Add to Cart</a></div>
-        </div>
-    </div>
+			</div>
+ </div>
 </div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-	<div class="P_container" id="P_container"></div>
-
-	</div>
+<?php 
+		}
+	}
+?>
+ 
+</div>
 
 </section>
 

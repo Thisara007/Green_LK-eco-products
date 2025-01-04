@@ -53,13 +53,14 @@
         if(isset($_POST['submit'])){
             $P_name =$_POST['product_name'];
             $P_img =$_FILES['product_img']['name'];
+            $P_tmp = $_FILES['product_img']['tmp_name'];
             $P_price =$_POST['product_price'];
             $P_dis =$_POST['product_dis'];
             $P_stock =$_POST['product_stock'];
 
-                $targetpath = "upload_img/". $P_img;
-                move_uploaded_file($P_img,$targetpath); 
-
+                $targetpath = "upload_img/" .$P_img  ;
+                move_uploaded_file($P_tmp,$targetpath); 
+                //echo "$P_img";
                 $sql = "INSERT INTO products(product_name,product_img,product_price,product_dis,product_stock) VALUES('$P_name','$P_img','$P_price','$P_dis','$P_stock');";
 
                 if(mysqli_query($connect,$sql)){
