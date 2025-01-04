@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin panel</title>
     <style>
-                :root {
+        :root {
         --Pgreen: #25be30;
         --Dgreen: #f44336;
         --backgroubnd: #f1f1f1;
@@ -89,9 +89,22 @@
     </style>
 </head>
 <body>
+    <?php 
+    require_once "dbconfi.php";
+            if(isset($_GET['delete_id'])){
+                $delete_id = $_GET['delete_id'];
+                $delete_sql = "DELETE FROM products WHERE product_id = $delete_id";
+                if (mysqli_query($connect, $delete_sql)) {
+                    echo "<script>alert('Product deleted successfully!');</script>";
+                    echo "<script>window.location.href='admin.php';</script>";
+                } else {
+                    echo "<script>alert('Error deleting product!');</script>";
+                }
+            }
+    ?>
     <section class ="admin">
         <div class = "btn">
-            <a href ="product_enter.php">Add Item</a>
+            <a href ="admin_add_product.php">Add Item</a>
         </div>
     <div class="product_table">
                 <table>
@@ -126,8 +139,8 @@
                                 echo "<td>". $item["product_dis"]."</td>";
                                 echo "<td>". $item["product_price"]."</td>";
                                 echo "<td>". $item["product_stock"]."</td>";
-                                echo "<td><a href ='#'>update</a></td>";
-                                echo "<td><a href ='#'>delete</a></td>";
+                                echo "<td><a href =admin_add_product.php?update_id=" . $item["product_id"]." '>update</a></td>";
+                                echo "<td><a href='?delete_id=" . $item["product_id"] . "' onclick='return confirm(\"Are you sure you want to delete this item?\")'>Delete</a></td>";
                                 echo "</tr>";
                                 $i = $i+1;
                                 }

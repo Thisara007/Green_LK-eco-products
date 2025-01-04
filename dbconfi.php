@@ -11,7 +11,7 @@
        die("Connection failed");
    }
    else{
-       echo "Connected Succesfully";
+      // echo "Connected Succesfully";
    }
    echo "<br>";
    } catch (Exception $e) {
