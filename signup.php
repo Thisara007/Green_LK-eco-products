@@ -119,7 +119,17 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     object-fit: cover;
+
 }
+.form-footer a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
 
 
         @media (max-width: 768px) {
@@ -169,8 +179,12 @@
                 <label for="password_verify">Confirm Password</label>
                 <input type="password" id="password_verify" name="password_verify" class="box" placeholder="Confirm your password" required>
 
-                <input type="submit" value="Sign Up" name="submit">
+                <input type="submit" value="Sign Up" name="submit_sign_up">
+                <div class="form-footer">
+                <p>Do you have an account? <a href="login.php">Sign in</a></p>
+            </div>
             </form>
+            
 
             <div class="photo-container">
             <img src="upload_img/Downpic.cc-2406174415.jpg" alt="Signup Photo" class="signup-photo">

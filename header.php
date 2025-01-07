@@ -7,7 +7,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="Styles.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
-	<title>Document</title>
+	<title>GrennLK</title>
 </head>
 <body>
 		<header>
@@ -16,7 +16,7 @@
 			<a href="#"> <img src="logo.webp" placeholder="logo"></a>
 			<nav class="navbar" style="width:500px;">
 				<li type="none" class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
 				<li type="none" class="nav-item">
                     <a class="nav-link" href="#">Products</a>
@@ -30,7 +30,7 @@
 			</nav>
 			<div class="icons">
 				<a href="cart.php"><i class="bi bi-cart"></i></a>
-				<a href="profile.php"><i class="bi bi-person"></i></a>
+				<a href="signup.php"><i class="bi bi-person"></i></a>
 			</div>
 
 

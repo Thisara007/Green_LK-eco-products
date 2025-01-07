@@ -133,25 +133,14 @@
 
     <section class="login" id="login">
         <div class="form-container">
-            <?php
-            require_once "header.php";
-                if(isset($_GET["error"])){
-                    if($_GET["error"] == "emptyinput"){
-                        echo "<p class='alert_warning'>All fields must be filled out!</p>";
-                    } elseif($_GET["error"] == "invalidemail"){
-                        echo "<p class='alert_warning'>Invalid email or password!</p>";
-                    }
-                }
-            ?>
-
-            <form action="includes/login.inc.php" method="post">
+            <form action="login_inc.php" method="post">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" class="box" placeholder="Enter your email" required>
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="box" placeholder="Enter your password" required>
 
-                <input type="submit" value="Login" name="submit">
+                <input type="submit" name="submit_login">
             </form>
 
             <div class="form-footer">

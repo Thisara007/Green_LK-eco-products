@@ -20,7 +20,7 @@ function get_from_product($connect,$sql){
 }
 
 
-    if(isset($_POST["submit"])){
+    if(isset($_POST["submit_sign_up"])){
                     $fullname = $_POST["name"];
                     $password = $_POST["password"];
                     $email = $_POST["email"];
@@ -52,8 +52,8 @@ function get_from_product($connect,$sql){
                     
 
                 }else{
-                     header("location : ../registration.php");
-                     exit();
+                    //echo "<script>windowi.location.href='signup.php';</script>";
+                    exit();
                 }
 
                 function invalidEmil($email){
@@ -83,15 +83,15 @@ function get_from_product($connect,$sql){
                 function emailExsist($connect,$email){
                     $sql = "SELECT * FROM users WHERE email='$email';"; 
                         $result =  mysqli_query($connect,$sql);
-                        if(mysqli_fetch_assoc($result)){
-                            $result = true;
+                        if($row = mysqli_fetch_assoc($result)){
+                            $result = $row;
                             return $result;
                         }else{
                            $result = false;
                            return $result;
                         }
                 }
-                function creatUser($fullname,$passwordHash,$email,$mobile,$address,$connect){
+            function creatUser($fullname,$passwordHash,$email,$mobile,$address,$connect){
                      $sql ="INSERT INTO users(name,email,mobile,address,password) VALUES ('$fullname','$email','$mobile','$address','$passwordHash')";
                      $result =  mysqli_query($connect,$sql);
                     if($result){
@@ -101,6 +101,7 @@ function get_from_product($connect,$sql){
                         echo "<script>alert('Error occured!');</script>";
                         exit();
                 }
+   
 ?>
 
             

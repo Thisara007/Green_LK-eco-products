@@ -1,6 +1,6 @@
 <?php
 require_once "header.php";
-require_once "functions.php";
+//require_once "functions.php";
 
 ?>
 	
@@ -48,7 +48,7 @@ require_once "functions.php";
 <?php 
 		}
 	}
-	require_once "functions.php";
+	//require_once "functions.php";
 	if(isset($_GET['pid'])){
 		$product_id=$_GET['pid'];
 		$sql_product_search="SELECT * FROM products WHERE product_id=$product_id;";
