@@ -1,5 +1,7 @@
 <?php
 require_once "header.php";
+require_once "functions.php";
+
 ?>
 	
 
@@ -35,16 +37,24 @@ require_once "header.php";
     <div class="P_container_bottom">
         <div class="p_price">
 			<?php echo $item["product_price"] ?>
-			<span class="discount"><?php echo $item["product_dis"] ?>% off</span>
+			<span class="discount"><?php $item["product_dis"] ?>% off</span>
         </div>
         <div class="p_buttons">
-            <div><a href="#" class="btn btn-buy">Buy Now</a></div>
+            <div><a href="index.php?pid=<?php echo $item["product_id"] ?>" class="btn btn-buy">Buy Now</a></div>
             <div><a href="#" class="btn btn-cart">Add to Cart</a></div>
 			</div>
  </div>
 </div>
 <?php 
 		}
+	}
+	require_once "functions.php";
+	if(isset($_GET['pid'])){
+		$product_id=$_GET['pid'];
+		$sql_product_search="SELECT * FROM products WHERE product_id=$product_id;";
+		$result=get_from_product($connect,$sql_product_search);
+		
+		$sql_cart ="INSERT INTO Cart(user_id,product_id,quantity,total) VALUES('$P_name','$P_img','$P_price','$P_dis');";
 	}
 ?>
  
