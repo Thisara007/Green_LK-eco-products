@@ -13,7 +13,7 @@
    else{
       // echo "Connected Succesfully";
    }
-   echo "<br>";
+  // echo "<br>";
    } catch (Exception $e) {
        //throw $th;
        die($e ->getMessage());

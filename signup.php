@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,17 +150,15 @@
     </style>
 </head>
 <body>
-    <header class="heading">
-        <span>Sign</span> Up
-    </header>
+<?php
+            require_once "header.php";
+               
+            ?>
 
     <section class="signup" id="signup">
         <div class="row">
         <div class="form-container">
-            <?php
-            require_once "header.php";
-               
-            ?>
+           
             <form action="functions.php" method="post">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" class="box" placeholder="Enter your name">

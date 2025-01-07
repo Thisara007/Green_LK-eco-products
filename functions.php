@@ -52,7 +52,7 @@ function get_from_product($connect,$sql){
                     
 
                 }else{
-                    //echo "<script>windowi.location.href='signup.php';</script>";
+                    header("Location: signup.php");
                     exit();
                 }
 
@@ -95,10 +95,9 @@ function get_from_product($connect,$sql){
                      $sql ="INSERT INTO users(name,email,mobile,address,password) VALUES ('$fullname','$email','$mobile','$address','$passwordHash')";
                      $result =  mysqli_query($connect,$sql);
                     if($result){
-                        echo "<script>alert('User registered!');</script>";
-                        echo "<script>window.location.href='login.php';</script>";
+                        header("Location: login.php");
                     }
-                        echo "<script>alert('Error occured!');</script>";
+                    header("Location: login.php?error=error ocuured");
                         exit();
                 }
    

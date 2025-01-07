@@ -1,3 +1,6 @@
+<?php
+	 session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +33,24 @@
 			</nav>
 			<div class="icons">
 				<a href="cart.php"><i class="bi bi-cart"></i></a>
+		<?php 
+				 if(isset($_SESSION["id"])){
+					require_once "dbconfi.php";
+					$ID = $_SESSION["id"];
+					$sql = "SELECT * FROM users WHERE user_id='$ID';";
+					
+					$result = mysqli_query($connect,$sql);
+					if($row=mysqli_fetch_assoc($result)){
+						$name = $row['name'];
+					}else{
+						header("Location: login.php");
+						exit(); 
+					}
+				?>
+				<a href="profile.php"><?php $name ?></i></a>
+				<?php
+				 }
+				 ?>
 				<a href="signup.php"><i class="bi bi-person"></i></a>
 			</div>
 
